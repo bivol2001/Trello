@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import SiteLogo from "../../../src/images/Brown Simple Elegant Minimalist Digital Crafts Etsy Shop Icon.png";
 import { useNavigate } from "react-router-dom";
 import { iconStar } from "../../consts/icons";

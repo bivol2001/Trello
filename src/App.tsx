@@ -1,3 +1,4 @@
+import React from "react";
 import { Routes, Route } from "react-router";
 import HomePage from "./Pages/HomePage";
 import Page404 from "./Pages/Page404";

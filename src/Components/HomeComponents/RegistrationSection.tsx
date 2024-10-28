@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import React, { useState } from "react";
 import ImgFirst from "../../images/TrelloUICollage_4x.webp";
 import { GoPlay } from "react-icons/go";
 import myVideo from "../../images/Wallem - Харизма.mp4";
