@@ -1,0 +1,303 @@
+.NavBarDiv {
+  display: flex;
+  background-color: rgb(236, 236, 236);
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 100px;
+}
+
+.optionNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 1100px;
+  height: 70px;
+  cursor: pointer;
+}
+.logo {
+  display: flex;
+  width: 100px;
+  cursor: pointer;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(158, 158, 158));
+  color: rgb(53, 53, 53);
+}
+
+.userNav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+}
+.optBtnNav {
+  font-size: 23px;
+  color: rgb(5, 5, 5);
+  cursor: pointer;
+}
+
+.optBtnNav:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(158, 158, 158));
+  color: rgb(53, 53, 53);
+}
+
+.regBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background-color: rgb(0, 101, 255);
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.regBtn:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(113, 167, 248));
+}
+
+.regSect1 {
+  background: linear-gradient(80deg, rgb(82, 67, 170), rgb(237, 80, 180));
+}
+
+.regSect2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 960px;
+  background-image: url(/src/images/white-wave-bg.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100vw;
+}
+
+.ImgReg {
+  display: flex;
+  width: 700px;
+  height: 600px;
+  margin: 70px 180px 20px 20px;
+}
+
+.EmailReg {
+  width: 700px;
+  height: 600px;
+  margin: 0px 20px 0px 180px;
+}
+
+.h1EmailReg {
+  color: white;
+  font-size: 60px;
+}
+
+.h5EmailReg {
+  color: white;
+  font-size: 30px;
+}
+
+.emailbtn {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  height: 70px;
+}
+.InputReg {
+  width: 350px;
+  height: 45px;
+  border-radius: 9px;
+  border-color: transparent;
+}
+
+.divWatch {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.WatchVideoText {
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.WatchVideoIcon {
+  padding: 5px 0px 0px 5px;
+  font-size: 19px;
+  color: white;
+  cursor: pointer;
+}
+
+.body1404 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 1250px;
+  height: 800px;
+  background-image: url(/src/images/white-wave-bg.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100vw;
+}
+
+.body2404 {
+  background: linear-gradient(80deg, rgb(82, 67, 170), rgb(237, 80, 180));
+}
+
+.Divfirstimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  height: 800px;
+}
+
+.firstImg {
+  display: flex;
+  padding: 0px 0px 50px 80px;
+  width: 650px;
+}
+
+.firstImg:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(241, 190, 200));
+}
+
+.DivSecondimg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 800px;
+}
+.secondImg {
+  display: flex;
+  align-self: center;
+  width: 400px;
+  height: 180px;
+}
+
+.secondImg:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(246, 245, 245));
+}
+
+.text404 {
+  font-size: 30px;
+  color: white;
+  display: flex;
+}
+
+.text404:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(245, 239, 239));
+}
+
+.btntohome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  background-color: rgb(0, 101, 255);
+  color: white;
+  text-decoration: none;
+  border-radius: 9px;
+}
+
+.btntohome:hover {
+  filter: drop-shadow(0 0 0.75rem rgb(113, 167, 248));
+}
+
+.NavBarContainer {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.NavBarPopover {
+  display: flex;
+  position: absolute;
+  padding: 0px 0px 0px 260px;
+  margin-top: 100px;
+  width: 100vw;
+  height: 500px;
+  background-color: rgb(236, 236, 236);
+  /* border-top: 1px solid rgba(0, 0, 0, 0.155); */
+}
+
+.divCard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1000px;
+  height: 300px;
+  display: flex;
+}
+.cardline {
+  font-size: 22px;
+  width: 1100px;
+}
+.card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  width: 300px;
+  padding: 0px 20px 0px 0px;
+  margin: 40px 0px 0px;
+}
+
+.card:hover {
+  background-color: rgba(97, 97, 97, 0.122);
+}
+
+.titleCard {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  height: 10px;
+}
+
+.iconStar {
+  margin: 0px 0px 0px 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0px 10px 0px 0px;
+}
+
+.text {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.videoPopoverDiv {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  width: 1601px;
+  height: 801px;
+  margin: 35px 0px 0px 220px;
+  background-color: rgba(0, 0, 0, 0.219);
+}
+
+.btnX {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: pointer;
+  color: rgb(13, 7, 7);
+  font-size: 40px;
+  margin: 10px 10px 0px 0px;
+  padding: 0px 17px 8px 17px;
+  background-color: beige;
+  border-radius: 100px;
+}
+
+.btnX:hover {
+  color: white;
+  background-color: black;
+}
