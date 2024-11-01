@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import SiteLogo from "../../../src/images/Brown Simple Elegant Minimalist Digital Crafts Etsy Shop Icon.png";
 import { useNavigate } from "react-router-dom";
-import { iconStar } from "../../consts/icons";
+import NavBarPopover from "./NavBarPopover";
+import {
+  dataFeaturesPop,
+  dataPlansPop,
+  dataSolutionsPop,
+  dataPricingsPop,
+  dataResourcesPop,
+} from "../../consts/PopoverData";
+
 const Navbar = () => {
   const navigate = useNavigate();
-  const [isPopover, setIsPopover] = useState<boolean>(false);
-
+  const [isPopover, setIsPopover] = useState<string>("");
+  console.log(isPopover)
   return (
     <div className="NavBarContainer">
       <div className="NavBarDiv">
@@ -21,15 +29,43 @@ const Navbar = () => {
           <div
             className="optBtnNav"
             onClick={() => {
-              setIsPopover(!isPopover);
+              setIsPopover(isPopover === "Features" ? "" : "Features");
             }}
           >
             Features
           </div>
-          <div className="optBtnNav">Solution</div>
-          <div className="optBtnNav">Plans</div>
-          <div className="optBtnNav">Pricing</div>
-          <div className="optBtnNav">Resources</div>
+          <div
+            className="optBtnNav"
+            onClick={() => {
+              setIsPopover(isPopover === "Solution" ? "" : "Solution");
+            }}
+          >
+            Solution
+          </div>
+          <div
+            className="optBtnNav"
+            onClick={() => {
+              setIsPopover(isPopover === "Plans" ? "" : "Plans");
+            }}
+          >
+            Plans
+          </div>
+          <div
+            className="optBtnNav"
+            onClick={() => {
+              setIsPopover(isPopover === "Pricings" ? "":"Pricings");
+            }}
+          >
+            Pricing
+          </div>
+          <div
+            className="optBtnNav"
+            onClick={() => {
+              setIsPopover(isPopover === "Resources" ? "" : "Resources");
+            }}
+          >
+            Resources
+          </div>
         </div>
         <div className="userNav">
           <div className="optBtnNav">Log in</div>
@@ -37,50 +73,14 @@ const Navbar = () => {
         </div>
       </div>
 
-      {isPopover && (
-        <div className="NavBarPopover">
-          <div className="divCard">
-            <div className="cardline">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum,
-                corporis.
-              </p>
-              <hr />
-            </div>
-            <div className="card">
-              {iconStar()} <p className="titleCard">Views</p>
-              <p className="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </p>
-            </div>
-            <div className="card">
-              {iconStar()} <p className="titleCard">Automation</p>
-              <p className="text">
-                Delectus architecto corporis quis veniam quam ullam vel!
-              </p>
-            </div>
-            <div className="card">
-              {iconStar()} <p className="titleCard">Power-ups</p>
-              <p className="text">
-                Eligendi corrupti nam aspernatur qui minus dicta temporibus?
-              </p>
-            </div>
-            <div className="card">
-              {iconStar()} <p className="titleCard">Templates</p>
-              <p className="text">
-                Error, provident quibusdam veniam ullam tempore veritatis
-                distinctio.
-              </p>
-            </div>
-            <div className="card">
-              {iconStar()} <p className="titleCard">Integration</p>
-              <p className="text">
-                Eaque laudantium deleniti autem, doloribus nulla voluptatibus
-                quidem.
-              </p>
-            </div>
-          </div>
-        </div>
+      {isPopover === "Features" && <NavBarPopover cardData={dataFeaturesPop} />}
+      {isPopover === "Solution" && (
+        <NavBarPopover cardData={dataSolutionsPop} />
+      )}
+      {isPopover === "Plans" && <NavBarPopover cardData={dataPlansPop} />}
+      {isPopover === "Pricings" && <NavBarPopover cardData={dataPricingsPop} />}
+      {isPopover === "Resources" && (
+        <NavBarPopover cardData={dataResourcesPop} />
       )}
     </div>
   );
