@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import CardPopover from "./CardPopover";
-import { useNavigate } from "react-router-dom";
 
 interface CardDataInterface {
   title: string;
@@ -12,7 +11,6 @@ interface NavBarPopoverProps {
 }
 
 const NavBarPopover = ({ cardData }: NavBarPopoverProps) => {
-  const navigate = useNavigate();
   const [isPopover, setIsPopover] = useState<boolean>(true);
   return (
     <div className="pop">
