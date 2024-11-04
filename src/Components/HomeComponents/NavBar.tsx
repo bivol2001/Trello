@@ -40,14 +40,6 @@ const Navbar = () => {
               setIsPopover(isPopover === "Solution" ? "" : "Solution");
             }}
           >
-            Solution
-          </div>
-          <div
-            className="optBtnNav"
-            onClick={() => {
-              setIsPopover(isPopover === "Plans" ? "" : "Plans");
-            }}
-          >
             Plans
           </div>
           <div
@@ -68,8 +60,12 @@ const Navbar = () => {
           </div>
         </div>
         <div className="userNav">
-          <div className="optBtnNav">Log in</div>
-          <div className="regBtn">Registration</div>
+          <div className="optBtnNav" onClick={() =>
+            navigate("login")
+          }>Log in</div>
+          <div className="regBtn" onClick={() => {
+            navigate("register")
+          }}>Registration</div>
         </div>
       </div>
 
