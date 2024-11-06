@@ -1,12 +1,20 @@
 import axios from "axios";
+import { HttpClient } from "./api/api/http-client";
 
-const api = axios.create({
-    baseURL:process.env.REACT_APP_BASE_URL,
-})
+// const api = axios.create({
+//     baseURL:"https://dev.dreamerz.net/",
+// })
 
-api.interceptors.request.use(
+const api = new HttpClient({
+  baseURL: "https://dev.dreamerz.net/",
+});
+
+
+api.instance.interceptors.request.use(
     (config) => {
-        config.headers['Content-Type'] = 'aplication/json' 
+        // config.headers['Content-Type'] = 'aplication/json' 
+        console.log(config);
+        
         return config
     },
     (error) => {
@@ -14,8 +22,10 @@ api.interceptors.request.use(
     }
 )
 
-api.interceptors.response.use(
+api.instance.interceptors.response.use(
     (response) => {
+        console.log(response);
+        
         return response.data
     },
     (error) => {
@@ -27,9 +37,4 @@ api.interceptors.response.use(
     }
 )
 
-export default {
-    get: api.get,
-    post: api.post,
-    put: api.put,
-    delete: api.delete
-}
+export default api.instance
