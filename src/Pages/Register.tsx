@@ -9,7 +9,12 @@ const Register = () => {
   const register1 = () => {
     console.log(email, password1);
     try {
-      register({email, password: password1});
+      register({ email, password: password1 }).then((res) => {
+        localStorage.setItem("accessToken", res.data.accessToken);
+        localStorage.setItem("refreshToken", res.data.refreshToken);
+     })
+    
+      
     } catch (e) {
       console.log(e);
     }
