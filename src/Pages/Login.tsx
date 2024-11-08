@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import "../StyleCss/Login.css";
 import { login } from "../api/request";
+import { useNavigate } from "react-router";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password1, setPassword1] = useState<string>("");
+  const navigate = useNavigate();
   const login1 = () => {
-    login({ email, password: password1 }).then((res) => {
-      console.log(res);
-
-      localStorage.setItem("accessToken", res.data.accessToken);
-      localStorage.setItem("refreshToken", res.data.refreshToken);
-      console.log("ma-m logat");
-    });
+    login({ email, password: password1 })
+      .then((res) => {
+        if (res.data && res.data.accessToken) {
+          localStorage.setItem("accessToken", res.data.accessToken);
+          localStorage.setItem("refreshToken", res.data.refreshToken);
+          navigate("/account");
+        }
+      })
+      .catch((error) => {
+        alert("Logarea a eșuat!");
+      });
   };
   return (
     <div className="login">
