@@ -9,13 +9,20 @@ import {
   dataPricingsPop,
   dataResourcesPop,
 } from "../../consts/PopoverData";
+import { useTranslation } from "react-i18next";
+
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [isPopover, setIsPopover] = useState<string>("");
   console.log(isPopover)
+  const {t,i18n} = useTranslation()
+
   return (
     <div className="NavBarContainer">
+      <h1>
+        {t("navbar")}
+      </h1>
       <div className="NavBarDiv">
         <div
           className="divLogo"
@@ -66,6 +73,18 @@ const Navbar = () => {
           <div className="regBtn" onClick={() => {
             navigate("register")
           }}>Registration</div>
+        </div>
+        <div>
+        <button className="active-language" onClick={()=>{
+          i18n.changeLanguage("en")
+        }}>
+          EN
+        </button>
+        <button onClick={()=>{
+          i18n.changeLanguage("ro")
+        }}>
+          RO
+        </button>
         </div>
       </div>
 

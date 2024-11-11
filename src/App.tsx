@@ -1,12 +1,27 @@
-import React from "react";
-import { Routes, Route } from "react-router";
+import React, { useEffect } from "react";
+import { Routes, Route, useParams, useLocation, Navigate, useNavigate } from "react-router";
 import HomePage from "./Pages/HomePage";
 import Page404 from "./Pages/Page404";
 import "./index.css";
 import Login from "./Pages/Login"
 import Register from "./Pages/Register"
 import HomePageLog from "./Pages/Page After log/HomepageLog";
+import { authRoutes } from "./consts/AuthRoutes";
+
 const App = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const accessToken = localStorage.getItem("accessToken")
+
+  useEffect(()=>{
+    if(authRoutes.includes(location.pathname) && !accessToken){
+      navigate("/login")
+    }
+    console.log(location.pathname);
+  }
+    ,[location])
+
+  
   return (
     <div>
       <Routes>
