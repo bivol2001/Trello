@@ -1,11 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Routes,
-  Route,
-  useParams,
-  useLocation,
-  useNavigate,
-} from "react-router";
+import { Routes, Route, useParams, useLocation, Navigate, useNavigate } from "react-router";
 import HomePage from "./Pages/HomePage";
 import Page404 from "./Pages/Page404";
 import "./index.css";
@@ -13,21 +7,21 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import HomePageLog from "./Pages/Page After log/HomepageLog";
 import { authRoutes } from "./consts/AuthRoutes";
-import Practic from "./Pages/practica/practic";
-import UseEffect from "./Pages/practica/exe"
 
 const App = () => {
-  const navigate = useNavigate();
-  const accessToken = localStorage.getItem("accessToken");
-  const location = useLocation();
-  
-  useEffect(() => {
-    console.log(location.pathname);
-     if (authRoutes.includes(location.pathname) && !accessToken) {
-       navigate("/login");
-     } 
-  },[location])
+  const navigate = useNavigate()
+  const location = useLocation()
+  const accessToken = localStorage.getItem("accessToken")
 
+  useEffect(()=>{
+    if(authRoutes.includes(location.pathname) && !accessToken){
+      navigate("/login")
+    }
+    console.log(location.pathname);
+  }
+    ,[location])
+
+  
   return (
     <div>
       <Routes>
@@ -36,8 +30,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<HomePageLog />} />
-        <Route path="/calc" element={<Practic/>} />
-        <Route path="/efect" element={<UseEffect/>} />
+       
       </Routes>
     </div>
   );
