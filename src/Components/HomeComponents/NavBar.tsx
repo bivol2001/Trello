@@ -11,18 +11,14 @@ import {
 } from "../../consts/PopoverData";
 import { useTranslation } from "react-i18next";
 
-
 const Navbar = () => {
   const navigate = useNavigate();
   const [isPopover, setIsPopover] = useState<string>("");
-  console.log(isPopover)
-  const {t,i18n} = useTranslation()
+
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="NavBarContainer">
-      <h1>
-        {t("navbar")}
-      </h1>
       <div className="NavBarDiv">
         <div
           className="divLogo"
@@ -39,7 +35,7 @@ const Navbar = () => {
               setIsPopover(isPopover === "Features" ? "" : "Features");
             }}
           >
-            Features
+            {t("navbar.btn1")}
           </div>
           <div
             className="optBtnNav"
@@ -47,7 +43,7 @@ const Navbar = () => {
               setIsPopover(isPopover === "Solution" ? "" : "Solution");
             }}
           >
-            Plans
+            {t("navbar.btn2")}
           </div>
           <div
             className="optBtnNav"
@@ -55,7 +51,7 @@ const Navbar = () => {
               setIsPopover(isPopover === "Pricings" ? "" : "Pricings");
             }}
           >
-            Pricing
+            {t("navbar.btn3")}
           </div>
           <div
             className="optBtnNav"
@@ -63,12 +59,12 @@ const Navbar = () => {
               setIsPopover(isPopover === "Resources" ? "" : "Resources");
             }}
           >
-            Resources
+            {t("navbar.btn4")}
           </div>
         </div>
         <div className="userNav">
           <div className="optBtnNav" onClick={() => navigate("login")}>
-            Log in
+            {t("navbar.login")}
           </div>
           <div
             className="regBtn"
@@ -76,26 +72,27 @@ const Navbar = () => {
               navigate("register");
             }}
           >
-            Registration
+            {t("navbar.btn5")}
           </div>
         </div>
+
         <div>
-          <button className="active-language">
-            EN</button>
-          <button>
-            RO</button>
-        </div>
-        <div>
-        <button className="active-language" onClick={()=>{
-          i18n.changeLanguage("en")
-        }}>
-          EN
-        </button>
-        <button onClick={()=>{
-          i18n.changeLanguage("ro")
-        }}>
-          RO
-        </button>
+          <button
+            className={i18n.language === "en" ? "active-language" : ""}
+            onClick={() => {
+              i18n.changeLanguage("en");
+            }}
+          >
+            EN
+          </button>
+          <button
+            className={i18n.language === "ro" ? "active-language" : ""}
+            onClick={() => {
+              i18n.changeLanguage("ro");
+            }}
+          >
+            RO
+          </button>
         </div>
       </div>
 
