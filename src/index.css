@@ -330,3 +330,7 @@ body {
   display: flex;
   justify-content: end;
 }
+
+.active-language{
+  background-color:aquamarine;
+}

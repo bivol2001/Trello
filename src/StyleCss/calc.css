@@ -1,0 +1,26 @@
+.calculator{
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    box-shadow:1px 1px 1px 10px;
+    background-color: rgb(175, 189, 182);
+    
+
+}
+.display input{
+    margin-bottom: 10px;
+    
+    font-size: 40px;
+    width: 270px;
+    height: 50px;
+    
+
+}
+.buttons button{
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    margin: 4px;
+    
+
+}
