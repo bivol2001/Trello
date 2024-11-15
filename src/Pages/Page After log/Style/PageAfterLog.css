@@ -1,0 +1,65 @@
+.NavBarLogin {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+  background-color: #172b4d;
+}
+
+.logoNav {
+  width: 20px;
+  height: 20px;
+}
+.logoutBtn {
+  color: silver;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  color: white;
+}
+
+.btnNav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btnNav:hover {
+  background-color: rgba(143, 141, 141, 0.436);
+}
+.text {
+  display: flex;
+  color: silver;
+}
+
+.text:hover {
+  color: white;
+}
+
+.arrow {
+  margin: 0px 4px;
+  border: solid silver;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.arrow:hover {
+  border-color: white;
+}
+
+.NavLogPopover {
+  position: absolute;
+  color: black;
+  z-index: 1000;
+  padding: 20px;
+  width: 400px;
+  height: 300px;
+  padding: 0px 0px 0px 0px;
+  background-color: silver;
+}

@@ -21,44 +21,46 @@ const Login = () => {
       });
   };
   return (
-    <div className="login">
-      <div>
-        <h5>Log in to continue</h5>
-        <div className="input-group">
-          <input
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            value={email}
-            type="text"
-            placeholder="Enter your email"
-            id="username"
-          />
-        </div>
-        <div className="input-group">
-          <input
-            onChange={(e) => {
-              setPassword1(e.target.value);
-            }}
-            value={password1}
-            type="password"
-            placeholder="Enter your password"
-            id="password"
-          />
-        </div>
-        <div className="forgot-pass">
-          <a href="#">Forgot Password?</a>
-        </div>
-        <button onClick={login1} type="submit" className="btn">
-          Login
-        </button>
-        <div className="sign-link">
-          <p>
-            Can't login?{" "}
-            <a href="register" className="register-link">
-              Create an acount
-            </a>
-          </p>
+    <div className="divLogin" >
+      <div className="login">
+        <div>
+          <h5>Log in to continue</h5>
+          <div className="input-group">
+            <input
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              value={email}
+              type="text"
+              placeholder="Enter your email"
+              id="username"
+            />
+          </div>
+          <div className="input-group">
+            <input
+              onChange={(e) => {
+                setPassword1(e.target.value);
+              }}
+              value={password1}
+              type="password"
+              placeholder="Enter your password"
+              id="password"
+            />
+          </div>
+          <div className="forgot-pass">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <button onClick={login1} type="submit" className="btn">
+            Login
+          </button>
+          <div className="sign-link">
+            <p>
+              Can't login?{" "}
+              <a href="register" className="register-link">
+                Create an acount
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
