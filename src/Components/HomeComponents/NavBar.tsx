@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import SiteLogo from "../../../src/images/Brown Simple Elegant Minimalist Digital Crafts Etsy Shop Icon.png";
 import { useNavigate } from "react-router-dom";
 import NavBarPopover from "./NavBarPopover";
@@ -16,6 +16,8 @@ const Navbar = () => {
   const [isPopover, setIsPopover] = useState<string>("");
 
   const { t, i18n } = useTranslation();
+  // const div = document.querySelector(".NavBarDiv")
+  // const div2 = useRef(null)
 
   return (
     <div className="NavBarContainer">
