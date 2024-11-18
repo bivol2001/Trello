@@ -16,6 +16,8 @@ const Navbar = () => {
   const [isPopover, setIsPopover] = useState<string>("");
 
   const { t, i18n } = useTranslation();
+  // const div = document.querySelector(".NavBarDiv")
+  // const div2 = useRef(null)
 
   const div = document.querySelector(".NavBarDiv");
 
