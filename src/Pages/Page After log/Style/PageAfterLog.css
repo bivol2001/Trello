@@ -1,6 +1,6 @@
 .NavBarLogin {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   width: 100vw;
   height: 50px;
@@ -8,16 +8,29 @@
 }
 
 .logoNav {
+  display: flex;
+  padding-right:100px ;
   width: 20px;
   height: 20px;
 }
-.logoutBtn {
-  color: silver;
+.logoutImg {
   cursor: pointer;
+  color: silver;
+  width: 21px;
+  height: 21px;
+}
+
+.logoutBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
 }
 
 .logoutBtn:hover {
-  color: white;
+  border-radius: 18px;
+  background-color: #c7c7c764;
 }
 
 .btnNav {
@@ -33,7 +46,7 @@
 }
 .text {
   display: flex;
-  color: silver;
+  color: #c7c7c7;
 }
 
 .text:hover {
@@ -54,12 +67,90 @@
 }
 
 .NavLogPopover {
+  display: flex;
   position: absolute;
   color: black;
   z-index: 1000;
-  padding: 20px;
   width: 400px;
   height: 300px;
-  padding: 0px 0px 0px 0px;
+  margin-top: 350px ;
   background-color: silver;
+}
+
+.btnPlus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 30px;
+  background-color: #579dff;
+  border-radius: 8px;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+}
+
+.btnPlus:hover {
+  background-color: #fcfcfca9;
+}
+
+.bellImg {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+
+.bellDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.bellDiv:hover {
+  border-radius: 14px;
+  background-color: #c7c7c764;
+}
+
+.userDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+}
+.userImg {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+.userDiv:hover {
+  border-radius: 18px;
+  background-color: #c7c7c764;
+}
+
+.questionDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.questionImg {
+  cursor: pointer;
+  color: silver;
+  width: 21px;
+  height: 21px;
+}
+
+.questionDiv:hover {
+  border-radius: 14px;
+  background-color: #c7c7c764;
+}
+.search {
+  width: 200px;
+  height: 25px;
 }

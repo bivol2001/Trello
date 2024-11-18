@@ -11,7 +11,7 @@ const Janel = ({ text, description, isDescription = false }: Janelprops) => {
   return (
     <div>
       <h1>{text}</h1>
-      {isDescription ? <h2>{description ? description : "default"}</h2> : <></>}
+      {isDescription && <h2>{description ? description : "default"}</h2>}
     </div>
   );
 };
