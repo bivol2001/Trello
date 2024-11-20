@@ -13,7 +13,7 @@ const Login = () => {
         if (res.data && res.data.accessToken) {
           localStorage.setItem("accessToken", res.data.accessToken);
           localStorage.setItem("refreshToken", res.data.refreshToken);
-          navigate("/account");
+          navigate("/boards");
         }
       })
       .catch((error) => {
