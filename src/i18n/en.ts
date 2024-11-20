@@ -1,16 +1,75 @@
 export const en = {
-    translation: {
+  translation: {
     navbar: {
-        login: 'Login',
-        btn1: 'Features',
-        btn2: 'Plans',
-        btn3: 'Prices',
-        btn4: 'Resurses',
-      btn5:'Registration'
+      login: "Login",
+      btn1: "Features",
+      btn2: "Plans",
+      btn3: "Prices",
+      btn4: "Resurses",
+      btn5: "Registration",
     },
     home: {
-      title:'homepage'
-    }
-      
-    }
-}
+      title: "homepage",
+    },
+    navbarLog: {
+      btn1: "Workspace",
+      btn2: "Recent",
+      btn3: "In Favorite",
+      btn4: "Template",
+      btn5: "Create",
+    },
+    questionPopover: {
+      text1:
+        "It’s easy to get your team up and running with Trello playbooks Get a new tip.",
+      text2: "Get a new tip",
+      text3: "Pricing",
+      text4: "Apps",
+      text5: "Blog",
+      text6: "Privacy",
+      text7: "Notice at Collection",
+      text8: "More",
+    },
+    userProfilePopover: {
+      text1: "Account",
+      text2: "Switch accounts",
+      text3: "Manage Account",
+      text4: "Trello",
+      text5: "Profile visibility",
+      text6: "Activity",
+      text7: "Cards",
+      text8: "Settings",
+      text9: "Theme",
+      text10: "Create Workspace",
+      text11: "Help",
+      text12: "Shortcuts",
+      text13: "Logout",
+    },
+    boardsList: {
+      text1: "Boards",
+      text2: "Template",
+      text3: "Home",
+      text4: "Workspaces",
+      text5: "Boards",
+      text6: "Hightlights",
+      text7: "Views",
+      text8: "Members",
+      text9: "Settings",
+    },
+    templatePopover: {
+      text1: "Business",
+      text2: "Design",
+      text3: "Education",
+      text4: "Engineering",
+      text5: "Marketing",
+      text6: "HR & Operations",
+      text7: "Personal",
+      text8: "Productivity",
+      text9: "Product management",
+      text10: "Project management",
+      text11: "Remote work",
+      text12: "Sales",
+      text13: "Support",
+      text14: "Team management",
+    },
+  },
+};

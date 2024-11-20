@@ -9,7 +9,7 @@
 
 .logoNav {
   display: flex;
-  padding-right:100px ;
+  padding-right: 100px;
   width: 20px;
   height: 20px;
 }
@@ -73,7 +73,7 @@
   z-index: 1000;
   width: 400px;
   height: 300px;
-  margin-top: 350px ;
+  margin-top: 350px;
   background-color: silver;
 }
 
@@ -91,6 +91,12 @@
 
 .btnPlus:hover {
   background-color: #fcfcfca9;
+}
+.close-div{
+  display: flex;
+  position: absolute;
+  width:100vw;
+  height: 100vh;
 }
 
 .bellImg {
@@ -153,4 +159,194 @@
 .search {
   width: 200px;
   height: 25px;
+}
+
+.user-profile-popover-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 200px;
+  background-color: #282e32;
+  top: 55px;
+  border-radius: 10px;
+  padding: 20px 10px;
+  right: 10px;
+  border: 1px solid rgb(216, 216, 216);
+}
+
+.popover-card {
+  width: 100%;
+  height: 30px;
+  color: #9fadbc;
+  cursor: pointer;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  margin: 15px 0px;
+}
+.user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: grey;
+}
+
+.user-info {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  color: #9fadbc;
+}
+
+.question-popover-container {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  top: 55px;
+  right: 150px;
+  width: 400px;
+  background-color: #282e32;
+  padding: 20px 35px;
+  border: 1px solid rgb(216, 216, 216);
+  gap: 20px;
+  color: #9fadbc;
+}
+
+.constante-question-popover {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 250px;
+  gap: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.img-question {
+  display: flex;
+  width: 290px;
+  height: 200px;
+}
+
+.get-text-question {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  width: 300px;
+  height: 60px;
+  color: #579dff;
+  cursor: pointer;
+}
+
+.notification-popover-container{
+    display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  top: 55px;
+  right: 150px;
+  width: 400px;
+  background-color: #282e32;
+  padding: 20px 35px;
+  border: 1px solid rgb(216, 216, 216);
+  gap: 20px;
+  color: #9fadbc;
+}
+
+.template-popover-container{
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 55px;
+  right: 150px;
+  width: 100px;
+  background-color: #282e32;
+  padding: 20px 35px;
+  border: 1px solid rgb(216, 216, 216);
+  gap: 20px;
+  color: #9fadbc;
+}
+
+.first-div-notification{
+  display: flex;
+  gap:15px;
+  text-align: left;
+}
+
+.notification-line{
+width: 300px;
+}
+
+.language-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.language-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #172b4d;
+  transition: .4s;
+  border: 1px solid #9fadbc;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  font-size: 12px;
+  color: white;
+}
+
+input:checked + .slider .label-on {
+  display: block;
+}
+
+input:not(:checked) + .slider .label-off {
+  display: block;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #9fadbc;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #172b4d;
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.img-notification-popover{
+  width:100px;
+  height: 100px;
 }

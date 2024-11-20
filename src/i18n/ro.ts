@@ -1,15 +1,75 @@
 export const ro = {
-    translation: {
+  translation: {
     navbar: {
-        login: 'Logare',
-        btn1: 'Caracteristici',
-        btn2: 'Planuri',
-        btn3: 'Preturi',
-        btn4: 'Resurse',
-      btn5:'Registreaza-te'
+      login: "Logare",
+      btn1: "Caracteristici",
+      btn2: "Planuri",
+      btn3: "Preturi",
+      btn4: "Resurse",
+      btn5: "Registreaza-te",
     },
     home: {
-      title:'homepage'
-    }
-    }
-  }
+      title: "homepage",
+    },
+    navbarLog: {
+      btn1: "Spațiu de lucru",
+      btn2: "Recent",
+      btn3: "În favorite",
+      btn4: "Șablon",
+      btn5: "Creează",
+    },
+    questionPopover: {
+      text1:
+        "Este ușor să îți pui echipa în mișcare cu playbook-urile Trello. Obține un nou sfat.",
+      text2: "Obține un nou sfat",
+      text3: "Prețuri",
+      text4: "Aplicații",
+      text5: "Blog",
+      text6: "Confidențialitate",
+      text7: "Notificare la colectare",
+      text8: "Mai multe",
+    },
+    userProfilePopover: {
+      text1: "Cont",
+      text2: "Schimbă conturile",
+      text3: "Gestionează contul",
+      text4: "Trello",
+      text5: "Vizibilitatea profilului",
+      text6: "Activitate",
+      text7: "Carduri",
+      text8: "Setări",
+      text9: "Temă",
+      text10: "Creează un spațiu de lucru",
+      text11: "Ajutor",
+      text12: "Scurtături",
+      text13: "Delogare",
+    },
+    boardsList: {
+  text1: "Tablouri",
+  text2: "Șablon",
+  text3: "Acasă",
+  text4: "Spații de lucru",
+  text5: "Tablouri",
+  text6: "Evidențiere",
+  text7: "Vizualizări",
+  text8: "Membri",
+  text9: "Setări",
+},
+    templatePopover: {
+      text1: "Afaceri",
+      text2: "Design",
+      text3: "Educație",
+      text4: "Inginerie",
+      text5: "Marketing",
+      text6: "HR și Operațiuni",
+      text7: "Personal",
+      text8: "Productivitate",
+      text9: "Management de produs",
+      text10: "Management de proiect",
+      text11: "Muncă la distanță",
+      text12: "Vânzări",
+      text13: "Suport",
+      text14: "Management de echipă",
+    },
+  },
+};

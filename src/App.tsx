@@ -14,7 +14,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import { authRoutes } from "./consts/AuthRoutes";
 import HomePageLog from "./Pages/Page After log/HomepageLog";
-// import Boards from "./Pages/Boards";
+import Boards from "./Pages/Boards";
 
 const App = () => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<HomePageLog />} />
-        {/* <Route path="/boards" element={<Boards/>} /> */}
+        <Route path="/boards" element={<Boards/>} />
       </Routes>
     </div>
   );
