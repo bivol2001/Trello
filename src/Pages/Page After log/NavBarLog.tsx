@@ -23,6 +23,9 @@ const NavBarLog = () => {
     localStorage.removeItem("refreshToken");
     navigate("/login");
   };
+
+  const [customPopover, setCustomPopover] = useState<string>("");
+
   return (
     <div className="NavBarLogin">
       <div className="logoNav">
@@ -55,7 +58,9 @@ const NavBarLog = () => {
       <div
         className="bellDiv"
         onClick={() => {
-          setIsNotificationButton(!notificationButton);
+          setCustomPopover(
+            customPopover === "notification" ? "" : "notification"
+          );
         }}
       >
         <img src={bellImg} alt="" className="bellImg" />
@@ -63,7 +68,7 @@ const NavBarLog = () => {
       <div
         className="questionDiv"
         onClick={() => {
-          setIsquestionButton(!questionButton);
+          setCustomPopover(customPopover==="question"?"":"question");
         }}
       >
         <img src={questionImg} alt="" className="questionImg" />
@@ -71,7 +76,7 @@ const NavBarLog = () => {
       <div
         className="userDiv"
         onClick={() => {
-          setOpenUserProfile(!openUserProfile);
+          setCustomPopover(customPopover==="user"?"":"user");
         }}
       >
         <img src={userImg} alt="" className="userImg" />
@@ -95,11 +100,12 @@ const NavBarLog = () => {
           </span>
         </label>
       </div>
-      {openUserProfile && <UserProfilePopover />}
-      {questionButton && <QuestionPopover />}
-      {notificationButton && <NotificationPopover />}
+      {customPopover === "user" && <UserProfilePopover />}
+      {customPopover === "question" && <QuestionPopover />}
+      {customPopover === "notification" && <NotificationPopover />}
     </div>
-  );``
+  );
+  ``;
 };
 
 export default NavBarLog;

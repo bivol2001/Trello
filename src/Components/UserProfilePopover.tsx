@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import { getUser } from "../api/request";
+import { UserDto } from "src/api/api/api/data-contracts";
 
 
 const UserProfilePopover = () => {
@@ -11,8 +13,20 @@ const UserProfilePopover = () => {
     localStorage.removeItem("refreshToken");
     navigate("/login");
   }
-  const constante = [
-    t("userProfilePopover.text1"),
+  const [userData, setUserData] = useState<any>()
+  useEffect(() => {
+    getUser().then((res) => {
+      setUserData(res.data)
+      console.log(res.data)
+    })
+  },[])
+  console.log(userData);
+  const constante:any = [
+    {
+      name: t("userProfilePopover.text1"),
+      url: "/login",
+      
+    },
     t("userProfilePopover.text2"),
     t("userProfilePopover.text3"),
     t("userProfilePopover.text4"),
@@ -27,11 +41,13 @@ const UserProfilePopover = () => {
     t("userProfilePopover.text13"),
   ];
 
+
   return (
     <div className="user-profile-popover-container">
       <div className="user-profile">
         <img src="" alt="" className="user-image" />
         <div>
+        
           <span className="user-info">Bivol Ion</span>
           <span className="user-info">bivolion06@ gmail.com</span>
         </div>
@@ -41,9 +57,11 @@ const UserProfilePopover = () => {
           <div
             key={index}
             className="popover-card"
-            onClick={el === t("userProfilePopover.text13")?logoutBtn:undefined}
+            onClick={() => {
+              navigate(el.url||"/boards")
+            }}
           >
-            {el}
+            {el.name || "ion"}
           </div>
         );
       })}

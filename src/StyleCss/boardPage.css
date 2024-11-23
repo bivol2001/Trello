@@ -1,12 +1,17 @@
 .container {
   display: flex;
-  color: gainsboro;
+  background-color: #1d2125;
+  width: 100vw;
+  min-height: 100vh;
+  color: #ffffff;
 }
+
 .sidebar {
-  background-color: rgb(28, 3, 37);
+  background-color: #1d2125;
+  border-right: 1px solid #333c43;
   padding: 100px 10px 10px 100px;
-  width: 40vh;
-  height: 800px;
+  width: 15%;
+  height: 100%;
   font-size: 19px;
   cursor: pointer;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -14,9 +19,9 @@
 }
 
 .board-container {
-  background-color: rgb(22, 21, 30);
-  width: 100vw;
-  height: 800px;
+  background-color: #1d2125;
+  width: 100%;
+  height: 100%;
   font-size: 18px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -96,4 +101,49 @@
   padding: 10px;
   background-color: rgb(143, 138, 139);
   margin: 8px;
+}
+
+.board-workspace-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.board-workspace-info-container {
+  display: flex;
+  align-items: center;
+}
+.workspace-cards-container {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.workspace-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 120px;
+  width: 200px;
+  background-color: red;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.card-icon {
+  align-self: flex-start;
+  width: 40px;
+  height: 40px;
+  background-color: aqua;
+}
+
+.card-title {
+  font-size: 25px;
+}
+
+.card-description {
+  font-size: 15px;
 }
