@@ -3,6 +3,7 @@ import "./../StyleCss/boardPage.css";
 import NavBarLog from "./Page After log/NavBarLog";
 import TemplatePopover from "../Components/TemplatePopover";
 import { useTranslation } from "react-i18next";
+import BoardsWorkspaces from "../Components/BoardsWorkspaces";
 
 const Boards = () => {
   const { t, i18n } = useTranslation();
@@ -51,27 +52,7 @@ const Boards = () => {
               <div>My Trello board</div>
             </div>
           </div>
-          <h1 className="your-work">YOUR WORKSPACES</h1>
-          <div className="trello-workspaces">
-            Trello Workspaces
-            <div className="trello-workspaces-items">
-              <ul>
-                <span>Boards</span>
-                <span>Views</span>
-                <span>Members</span>
-                <span>Settings</span>
-                <span>Upgrade</span>
-              </ul>
-            </div>
-          </div>
-          <div className="cards">
-            <div className="trello-cards">
-              <div>My Trello board</div>
-            </div>
-            <div className="trello-cards-new">
-              <div>Create new board</div>
-            </div>
-          </div>
+          <BoardsWorkspaces/>
         </main>
       </div>
     </div>
