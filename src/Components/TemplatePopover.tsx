@@ -26,9 +26,7 @@ const TemplatePopover = () => {
         {constante.map((el, index) => {
           return (
             <div key={index}>
-              <ul>
-                <li>{el}</li>
-              </ul>
+                <p>{el}</p>
             </div>
           );
         })}

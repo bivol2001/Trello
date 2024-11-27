@@ -4,50 +4,82 @@ import { useNavigate } from "react-router";
 import { getUser } from "../api/request";
 import { UserDto } from "src/api/api/api/data-contracts";
 
-
 const UserProfilePopover = () => {
   const { t, i18n } = useTranslation();
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   const logoutBtn = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
     navigate("/login");
-  }
-  const [userData, setUserData] = useState<any>()
+  };
+  const [userData, setUserData] = useState<any>();
   useEffect(() => {
     getUser().then((res) => {
-      setUserData(res.data)
-      console.log(res.data)
-    })
-  },[])
+      setUserData(res.data);
+      console.log(res.data);
+    });
+  }, []);
   console.log(userData);
-  const constante:any = [
+  const constante: any = [
     {
       name: t("userProfilePopover.text1"),
-      url: "/login",
-      
+      url: "",
     },
-    t("userProfilePopover.text2"),
-    t("userProfilePopover.text3"),
-    t("userProfilePopover.text4"),
-    t("userProfilePopover.text5"),
-    t("userProfilePopover.text6"),
-    t("userProfilePopover.text7"),
-    t("userProfilePopover.text8"),
-    t("userProfilePopover.text9"),
-    t("userProfilePopover.text10"),
-    t("userProfilePopover.text11"),
-    t("userProfilePopover.text12"),
-    t("userProfilePopover.text13"),
+    {
+      name: t("userProfilePopover.text2"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text3"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text4"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text5"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text6"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text7"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text8"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text9"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text10"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text11"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text12"),
+      url: "",
+    },
+    {
+      name: t("userProfilePopover.text13"),
+      url: "/login",
+    },
   ];
-
 
   return (
     <div className="user-profile-popover-container">
       <div className="user-profile">
         <img src="" alt="" className="user-image" />
         <div>
-        
           <span className="user-info">Bivol Ion</span>
           <span className="user-info">bivolion06@ gmail.com</span>
         </div>
@@ -58,10 +90,10 @@ const UserProfilePopover = () => {
             key={index}
             className="popover-card"
             onClick={() => {
-              navigate(el.url||"/boards")
+              navigate(el.url || "/boards");
             }}
           >
-            {el.name || "ion"}
+            {el.name || ""}
           </div>
         );
       })}
