@@ -4,7 +4,7 @@ import userImg from "../images/user.png";
 
 const NotificationPopover = () => {
     return (
-        <div className="notification-popover-container">
+        <div className="notification-popover-container" >
       <div className="first-div-notification">
         <h5>Notification</h5>
         <p>Only show unread</p>

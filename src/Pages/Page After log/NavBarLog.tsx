@@ -68,7 +68,7 @@ const NavBarLog = () => {
       <div
         className="questionDiv"
         onClick={() => {
-          setCustomPopover(customPopover==="question"?"":"question");
+          setCustomPopover(customPopover === "question" ? "" : "question");
         }}
       >
         <img src={questionImg} alt="" className="questionImg" />
@@ -76,7 +76,7 @@ const NavBarLog = () => {
       <div
         className="userDiv"
         onClick={() => {
-          setCustomPopover(customPopover==="user"?"":"user");
+          setCustomPopover(customPopover === "user" ? "" : "user");
         }}
       >
         <img src={userImg} alt="" className="userImg" />

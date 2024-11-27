@@ -4,39 +4,60 @@ import NavBarLog from "./Page After log/NavBarLog";
 import TemplatePopover from "../Components/TemplatePopover";
 import { useTranslation } from "react-i18next";
 import BoardsWorkspaces from "../Components/BoardsWorkspaces";
+import userImg from "../images/user.png";
+import BoardPopover from "../Components/BoardPopover";
 
 const Boards = () => {
   const { t, i18n } = useTranslation();
   const [templatePopover, useIsTemplatePopover] = useState<boolean>(false);
+  const [boardPopover, useBoardPopoveer] = useState(false);
+
   return (
     <div className="page-container">
       <NavBarLog />
       <div className="container">
         <aside className="sidebar">
           <div className="sidebar-list">
-            <ul>
-              <li>{t("boardsList.text1")}</li>
-              <li
-                onClick={() => {
-                  useIsTemplatePopover(!templatePopover);
-                }}
-              >
-                {t("boardsList.text2")}
-              </li>
+            <div className="side-list-down">
+              <div className="sidebar-list-div">
+                <p className="sidebar-list-p">{t("boardsList.text1")}</p>
+              </div>
+              <div className="side-list-down">
+                <div className="sidebar-list-div">
+                  <p
+                    className="sidebar-list-p"
+                    onClick={() => {
+                      useIsTemplatePopover(!templatePopover);
+                    }}
+                  >
+                    {t("boardsList.text2")}
+                  </p>
+                </div>
+              </div>
               {templatePopover && <TemplatePopover />}
-              <li>{t("boardsList.text3")}</li>
-            </ul>
-            <hr />
+              <div className="sidebar-list-div">
+                <p className="sidebar-list-p">{t("boardsList.text3")}</p>
+              </div>
+            </div>
+            <div className="sidebar-list-line">
+              <hr />
+            </div>
           </div>
-          <p>{t("boardsList.text4")}</p>
           <div className="side-list-down">
-            <ul>
-              <li>{t("boardsList.text5")}</li>
-              <li>{t("boardsList.text6")}</li>
-              <li>{t("boardsList.text7")}</li>
-              <li>{t("boardsList.text8")}</li>
-              <li>{t("boardsList.text9")}</li>
-            </ul>
+            <p>{t("boardsList.text4")}</p>
+            <div
+              className="side-bar-list-board"
+              onClick={() => {
+                useBoardPopoveer(!boardPopover);
+              }}
+            >
+              <img src={userImg} alt="" className="side-bar-list-board-img" />
+              <p className="side-bar-list-board-text">Boards Panel Trello</p>
+              <i
+                className={boardPopover === false ? "arrow down" : "arrow up"}
+              ></i>
+            </div>
+            {boardPopover && <BoardPopover />}
           </div>
         </aside>
         <main className="board-container">
@@ -52,7 +73,7 @@ const Boards = () => {
               <div>My Trello board</div>
             </div>
           </div>
-          <BoardsWorkspaces/>
+          <BoardsWorkspaces />
         </main>
       </div>
     </div>
