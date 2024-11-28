@@ -122,10 +122,11 @@
   align-items: center;
   min-height: 120px;
   width: 200px;
-  background-color: red;
+  background-color:#987195;
   border-radius: 10px;
   padding: 10px;
   gap: 10px;
+  cursor: pointer;
 }
 
 .card-icon {
@@ -204,3 +205,5 @@
 .sidebar-list-line {
   padding: 20px 0;
 }
+
+

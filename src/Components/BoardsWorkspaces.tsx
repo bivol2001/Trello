@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import userImg from "../images/1.png";
+import WorkspacesCard from "./WorkspacesCard";
+import AddCardModalBoards from "./AddCardModalBoards";
+
+interface CardInterface {
+  img: string,
+  title:string,
+  description:string,
+}
+
+const workspacesUser:CardInterface[] = [
+  {
+    img: userImg,
+    title: "New card1",
+    description: "`zc`zc`zc``",
+  },
+  {
+    img: "",
+    title: "New card2",
+    description: "lorem aretgre",
+  },
+];
+
+
 
 const BoardsWorkspaces = () => {
+  const [cards, setCards] = useState<CardInterface[]>(workspacesUser)
+  const [openModal, setOpenModal] = useState<boolean>(false)
+  const createCard = () => {
+    const newCard:CardInterface = {
+      img: "",
+      title: "Card3",
+      description: "Card3"
+    }
+    console.log(1)
+    setCards([newCard,...cards])
+  }
+  console.log(openModal)
   return (
     <div className="board-workspace-container">
       <h1 className="">YOUR WORKSPACES</h1>
       <div className="board-workspace-info-container">
-        <span>Trello Workspaces</span>
+        <span>Trello Workspaces</span>``
         <div className="trello-workspaces-items">
           <span>Boards</span>
           <span>Views</span>
@@ -15,15 +51,14 @@ const BoardsWorkspaces = () => {
         </div>
       </div>
       <div className="workspace-cards-container">
-        <div className="workspace-card-container">
-          <img src="" alt="" className="card-icon" />
-          <span className="card-title">Lorem, ipsum dolor.</span>
-                  <span className="card-description">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, quas.
-          </span>
-        </div>
-        <div className="workspace-card-container"></div>
+        {cards.map((card) => {
+          return (
+           <WorkspacesCard card={card} />
+          );
+        })}
+        <div className="workspace-card-container" onClick={()=>{setOpenModal(true)}}>Create new board</div>
       </div>
+      <AddCardModalBoards open={openModal} closefn={setOpenModal} />
     </div>
   );
 };

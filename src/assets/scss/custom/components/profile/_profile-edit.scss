@@ -1,0 +1,115 @@
+.profile-pic {
+  max-width: 100%;
+  width: 105px;
+  height: 105px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  -webkit-border-radius: 50%;
+}
+.profile-default-pic {
+  display :flex;
+  justify-content: center;
+  align-items: center;
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background: #E5E5E5;
+}
+.profile-img-edit {
+  position: relative;
+  display: inline-block;
+}
+.file-upload {
+  display: none;
+}
+.p-image-delete {
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 10px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: #FFFFFF;
+  color: #FF0000;
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #E5E5E5
+}
+.p-image-add {
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 10px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: #FFFFFF;
+  color: #2AA4F4;
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  line-height: 28px;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid #E5E5E5
+}
+.close-image {
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  border: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-button {
+  font-size: 1.5em;
+}
+.iq-edit-profile {
+  .nav-link {
+    padding: 20px 15px;
+    border-radius: 0;
+    color: var(--iq-body-text);
+    text-align: center;
+    font-size: 16px;
+    border-left: 1px solid var(--iq-light-primary);
+  }
+}
+.iq-edit-profile.nav-pills {
+  .nav-link.active {
+    color: $white;
+    background: $primary;
+  }
+  .show {
+    > .nav-link {
+      color: $white;
+      background: $primary;
+    }
+  }
+}
+ul.iq-edit-profile {
+  li {
+    &:first-child {
+      a {
+        border-radius: 5px 0 0 5px;
+        border-left: none;
+      }
+    }
+    &:last-child {
+      a {
+        border-radius: 0 5px 5px 0;
+      }
+    }
+  }
+}
