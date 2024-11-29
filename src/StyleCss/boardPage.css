@@ -1,4 +1,4 @@
-.container {
+.container-page-board {
   display: flex;
   background-color: #1d2125;
   width: 100vw;
@@ -10,7 +10,7 @@
   background-color: #1d2125;
   border-right: 1px solid #333c43;
   padding: 100px 10px 10px 100px;
-  width: 20%;
+  width: 380px;
   height: 100%;
   font-size: 19px;
   cursor: pointer;
@@ -122,7 +122,7 @@
   align-items: center;
   min-height: 120px;
   width: 200px;
-  background-color:#987195;
+  background-color: #987195;
   border-radius: 10px;
   padding: 10px;
   gap: 10px;
@@ -149,7 +149,7 @@
   align-items: center;
   justify-content: space-evenly;
   width: 190px;
-  height: 50px;
+  height: 60px;
   margin: 20px 0 10px;
   cursor: pointer;
   border-radius: 10px;
@@ -176,7 +176,6 @@
 .arrow {
   border: solid white;
   border-width: 0 3px 3px 0;
-  display: inline-block;
   padding: 3px;
 }
 
@@ -206,4 +205,106 @@
   padding: 20px 0;
 }
 
+.page-container {
+  border: 0;
+  margin: 0;
+}
 
+.container-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #1d2125;
+  color: silver;
+  width: 500px;
+  gap: 15px;
+  padding: 10px;
+}
+
+.create-div {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 60px;
+}
+
+.modal-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  padding-left: 40px;
+}
+
+.modal-button-x {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 3px 0;
+  cursor: pointer;
+  color: silver;
+}
+
+.modal-button-x:hover {
+  background-color: rgba(243, 242, 242, 0.524);
+}
+
+.modal-board-img {
+  width: 400px;
+  height: 200px;
+}
+
+.modal-button-create {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #2a3036;
+  width: 460px;
+  height: 50px;
+  cursor: pointer;
+  border: unset;
+  color: silver;
+}
+
+.modal-button-create:disabled {
+  color: #333c43;
+  cursor: default;
+}
+
+.modal-button-start {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #2a3036;
+  width: 460px;
+  height: 50px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.input-modal {
+  border: unset;
+  background-color: #2a3036;
+  width: 460px;
+  height: 40px;
+  color: silver;
+}
+
+.select-modal {
+  background-color: #2a3036;
+  color: silver;
+  border: unset;
+  width: 460px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.comment-modal {
+  text-align: center;
+}
