@@ -33,10 +33,8 @@ const BoardsWorkspaces = () => {
       title: "Card3",
       description: "Card3"
     }
-    console.log(1)
     setCards([newCard,...cards])
   }
-  console.log(openModal)
   return (
     <div className="board-workspace-container">
       <h1 className="">YOUR WORKSPACES</h1>

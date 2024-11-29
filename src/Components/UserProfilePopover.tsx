@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { getUser } from "../api/request";
 import { UserDto } from "src/api/api/api/data-contracts";
-
+import Photo from "../images/IMG_8495.jpg"
 const UserProfilePopover = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -19,7 +19,6 @@ const UserProfilePopover = () => {
       console.log(res.data);
     });
   }, []);
-  console.log(userData);
   const constante: any = [
     {
       name: t("userProfilePopover.text1"),
@@ -78,7 +77,7 @@ const UserProfilePopover = () => {
   return (
     <div className="user-profile-popover-container">
       <div className="user-profile">
-        <img src="" alt="" className="user-image" />
+        <img src={Photo} alt="" className="user-image" />
         <div>
           <span className="user-info">Bivol Ion</span>
           <span className="user-info">bivolion06@ gmail.com</span>

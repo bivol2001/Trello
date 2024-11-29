@@ -15,7 +15,7 @@ const Boards = () => {
   return (
     <div className="page-container">
       <NavBarLog />
-      <div className="container">
+      <div className="container-page-board">
         <aside className="sidebar">
           <div className="sidebar-list">
             <div className="side-list-down">
@@ -53,9 +53,9 @@ const Boards = () => {
             >
               <img src={userImg} alt="" className="side-bar-list-board-img" />
               <p className="side-bar-list-board-text">Boards Panel Trello</p>
-              <i
+              <div
                 className={boardPopover === false ? "arrow down" : "arrow up"}
-              ></i>
+              ></div>
             </div>
             {boardPopover && <BoardPopover />}
           </div>
