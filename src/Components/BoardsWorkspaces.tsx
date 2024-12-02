@@ -4,6 +4,7 @@ import WorkspacesCard from "./WorkspacesCard";
 import AddCardModalBoards from "./AddCardModalBoards";
 
 export interface CardInterface {
+  id: number;
   img: string;
   title: string;
   description: string;
@@ -12,12 +13,14 @@ export interface CardInterface {
 
 const workspacesUser: CardInterface[] = [
   {
+    id: 1,
     img: userImg,
     title: "New card1",
     description: "`zc`zc`zc``",
     isActive: false,
   },
   {
+    id: 2,
     img: "",
     title: "New card2",
     description: "lorem aretgre",
@@ -50,15 +53,36 @@ const BoardsWorkspaces = () => {
       );
     }
   }, [showActive, cards]);
-  const createCard = () => {
-    const newCard: CardInterface = {
-      img: "",
-      title: "Card3",
-      description: "Card3",
-      isActive: true,
-    };
-    setCards([newCard, ...cards]);
+
+  const deleteCard = (id: number) => {
+    const newCards = cards.filter((card) => card.id !== id);
+    setCards(newCards);
   };
+
+  const updateCard = (
+    id: number,
+    titleUpdate: string,
+    descriptionUpdate: string
+  ) => {
+    const editedCard = cards.find((card) => card.id === id);
+    const newCard = {
+      ...editedCard,
+      title: titleUpdate ? titleUpdate : editedCard.title,
+      description: descriptionUpdate
+        ? descriptionUpdate
+        : editedCard.description,
+      
+    };
+
+    const index = cards.indexOf(editedCard)
+    const updatedNew= cards.splice(index, 1, newCard);
+    setCards(updatedNew)
+
+
+
+
+  };
+
   return (
     <div className="board-workspace-container">
       <h1 className="">YOUR WORKSPACES</h1>
@@ -90,7 +114,13 @@ const BoardsWorkspaces = () => {
       </div>
       <div className="workspace-cards-container">
         {filtredCards.map((card) => {
-          return <WorkspacesCard card={card} />;
+          return (
+            <WorkspacesCard
+              updateCard={updateCard}
+              card={card}
+              deleteCard={deleteCard}
+            />
+          );
         })}
         <div
           className="workspace-card-container"

@@ -8,7 +8,9 @@ const AddCardModalBoards = ({ open, closefn, setCards, cards }) => {
   const [description, setDescription] = useState<string>("");
 
   const createCard = () => {
+    const newId=cards.length +1
     const newCard: CardInterface = {
+      id:newId,
       img: "",
       title: title,
       description: description,
