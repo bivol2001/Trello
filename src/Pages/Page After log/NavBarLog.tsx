@@ -70,6 +70,7 @@ const NavBarLog = () => {
         onClick={() => {
           setCustomPopover(customPopover === "question" ? "" : "question");
         }}
+        
       >
         <img src={questionImg} alt="" className="questionImg" />
       </div>

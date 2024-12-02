@@ -1,10 +1,24 @@
 import React, { useState } from "react";
 import { Modal, ModalBody } from "react-bootstrap";
 import img from "../images/DSC_3987.jpg";
+import { CardInterface } from "./BoardsWorkspaces";
 
-const AddCardModalBoards = ({ open, closefn }) => {
-  const [inputValue, setInputValue] = useState("");
+const AddCardModalBoards = ({ open, closefn, setCards, cards }) => {
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
 
+  const createCard = () => {
+    const newCard: CardInterface = {
+      img: "",
+      title: title,
+      description: description,
+      isActive: false,
+    };
+    setCards([newCard, ...cards]);
+    setDescription("");
+    setTitle("");
+    closefn(false);
+  };
   return (
     <Modal
       onHide={() => closefn(false)}
@@ -24,17 +38,29 @@ const AddCardModalBoards = ({ open, closefn }) => {
             X
           </span>
         </div>
-        <div>``
+        <div>
+          ``
           <img src={img} alt="" className="modal-board-img" />
         </div>
         <div>
           <p>Board title</p>
           <input
             type="text"
+            placeholder="Title"
             className="input-modal"
-            value={inputValue}
+            value={title}
             onChange={(e) => {
-              setInputValue(e.target.value);
+              setTitle(e.target.value);
+            }}
+          />
+          <p>Board Description</p>
+          <input
+            type="text"
+            placeholder="Description"
+            className="input-modal"
+            value={description}
+            onChange={(e) => {
+              setDescription(e.target.value);
             }}
           />
         </div>
@@ -50,7 +76,11 @@ const AddCardModalBoards = ({ open, closefn }) => {
           </select>
         </div>
         <div>
-          <button className="modal-button-create" disabled={!inputValue.trim()}>
+          <button
+            className="modal-button-create"
+            onClick={createCard}
+            disabled={!title || !description.trim()}
+          >
             Create
           </button>
         </div>
