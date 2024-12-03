@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Modal, ModalBody } from "react-bootstrap";
 
-const EditCardModalBoards = ({ open, closefn }) => {
+const EditCardModalBoards = ({ open, closefn,id,updateCard }) => {
   const [titleUpdate, setTitleUpdate] = useState<string>("");
   const [descriptionUpdate, setDescriptionUpdate] = useState<string>("");
 
@@ -47,7 +47,7 @@ const EditCardModalBoards = ({ open, closefn }) => {
           />
         </div>
         <div>
-          <button
+          <button onClick={()=>{updateCard(id, titleUpdate, descriptionUpdate);}}
             className="modal-button-start"
             disabled={!titleUpdate.trim() || !descriptionUpdate.trim()}
           >

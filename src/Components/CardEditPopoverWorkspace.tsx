@@ -5,9 +5,19 @@ import FavoriteGold from "../images/star (1).png";
 import EditCardModalBoards from "./EditCardModalBoards";
 import trush from "../images/trush.png";
 
-const CardEditPopoverWorkspace = () => {
+interface CardEditPopoverWorkspaceProps{
+  id: number;
+  updateCard: (id: number, title:string, description:string) => void;
+  deleteCard:(id:number)=> void;
+}
+
+
+
+const CardEditPopoverWorkspace = ({deleteCard,id,updateCard}:CardEditPopoverWorkspaceProps) => {
   const [isFavorite, setIsFavorite] = useState<boolean>(true);
-  const [openModal, setOpenModal] = useState<boolean>(false);
+  const [openModal, setOpenModal] = useState<boolean>(false)
+
+
 
   return (
     <div className="workspace-card-btn">
@@ -30,10 +40,12 @@ const CardEditPopoverWorkspace = () => {
           />
         </span>
         <span>
-          <img src={trush} alt="" className="workspace-card-btn-customize" />
+          <img onClick={() => {
+            deleteCard(id)
+          }} src={trush} alt="" className="workspace-card-btn-customize" />
         </span>
       </div>
-      <EditCardModalBoards open={openModal} closefn={setOpenModal} />
+      <EditCardModalBoards id={id} updateCard={updateCard} open={openModal} closefn={setOpenModal} />
     </div>
   );
 };
