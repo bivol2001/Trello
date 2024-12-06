@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import LogoNav from "../../images/87e1af770a49ce8e84e3.gif";
+import LogoNavGif from "../../images/87e1af770a49ce8e84e3.gif";
+import LogoNavPng from "../../images/87e1af770a49ce8e84e3.png";
 import "../Page After log/Style/PageAfterLog.css";
 import { useNavigate } from "react-router";
 import bellImg from "../../images/notification.png";
@@ -25,11 +26,24 @@ const NavBarLog = () => {
   };
 
   const [customPopover, setCustomPopover] = useState<string>("");
+  const [isFavorite, setIsFavorite] = useState<boolean>(true);
 
   return (
     <div className="NavBarLogin">
-      <div className="logoNav">
-        <img className="logo" src={LogoNav} alt="" />
+      <div
+        className="logoNav"
+        onMouseEnter={() => {
+          setIsFavorite(!isFavorite);
+        }}
+        onMouseLeave={() => {
+          setIsFavorite(!isFavorite);
+        }}
+      >
+        <img
+          className="logo"
+          src={isFavorite ? LogoNavPng : LogoNavGif}
+          alt=""
+        />
       </div>
       <div className="btnNav">
         <div className="text">{t("navbarLog.btn1")}</div>
@@ -70,7 +84,6 @@ const NavBarLog = () => {
         onClick={() => {
           setCustomPopover(customPopover === "question" ? "" : "question");
         }}
-        
       >
         <img src={questionImg} alt="" className="questionImg" />
       </div>

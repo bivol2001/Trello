@@ -21,7 +21,7 @@ const WorkspacesCard = ({ card, deleteCard ,updateCard}: WorkspacesCardProps) =>
         setIsHoveer(false);
       }}
     >
-      {isHover && <CardEditPopoverWorkspace updateCard={updateCard} deleteCard={deleteCard} id={card.id} />}
+      {isHover && <CardEditPopoverWorkspace updateCard={updateCard} deleteCard={deleteCard} id={card.id} isLiked={card.isLiked} />}
       <img src={card.img} alt="" className="card-icon" />
       <span className="card-title">{card.title}</span>
       <span className="card-description">{card.description}</span>
