@@ -27,7 +27,7 @@ const workspacesUser: CardInterface[] = [
     title: "New card2",
     description: "lorem aretgre",
     isActive: true,
-    isLiked: false,
+    isLiked: true,
   },
 ];
 
@@ -55,6 +55,13 @@ const BoardsWorkspaces = () => {
         })
       );
     }
+    if (showActive === -2) {
+      setFiltredCards(
+        cards.filter((card) => {
+          return card.isLiked === true;
+        })
+      );
+    }
   }, [showActive, cards]);
 
   const deleteCard = (id: number) => {
@@ -66,101 +73,105 @@ const BoardsWorkspaces = () => {
     id: number,
     titleUpdate: string,
     descriptionUpdate: string,
-    updateLike?:boolean,
+    updateLike?: boolean
   ) => {
     const editedCard = cards.find((card) => card.id === id);
-    if (updateLike) {
-            const newCard = {
-              ...editedCard,
-              isLiked: !editedCard.isLiked
-            };
-
-            const newCards = cards.map((card) => {
-              if (card.id === newCard.id) {
-                return newCard;
-              } else {
-                return card;
-              }
-            });
-            setCards(newCards);
-    } else {
-      
-    
-      const newCard = {
-        ...editedCard,
-        title: titleUpdate ? titleUpdate : editedCard.title,
-        description: descriptionUpdate
-          ? descriptionUpdate
-          : editedCard.description,
-      };
-
-      const newCards = cards.map((card) => {
-        if (card.id === newCard.id) {
-          return newCard;
-        } else {
-          return card;
-        }
-      });
-      setCards(newCards);
-    }
-
+    const newCard = {
+      ...editedCard,
+      title: titleUpdate ? titleUpdate : editedCard.title,
+      description: descriptionUpdate
+        ? descriptionUpdate
+        : editedCard.description,
+      isLiked: updateLike ? !editedCard.isLiked : editedCard.isLiked,
+    };
+    const newCards = cards.map((card) => {
+      if (card.id === newCard.id) {
+        return newCard;
+      } else {
+        return card;
+      }
+    });
+    setCards(newCards);
   };
 
   return (
-    <div className="board-workspace-container">
-      <h1 className="">YOUR WORKSPACES</h1>
-      <div className="board-workspace-info-container">
-        <span>Trello Workspaces</span>``
-        <div className="trello-workspaces-items">
-          <span
-            onClick={() => {
-              setShowActive(0);
-            }}
-          >
-            All
-          </span>
-          <span
-            onClick={() => {
-              setShowActive(1);
-            }}
-          >
-            Active
-          </span>
-          <span
-            onClick={() => {
-              setShowActive(-1);
-            }}
-          >
-            Inactive
-          </span>
+    <main className="board-container">
+      <div className="recently-viewed">Recently viewed</div>
+      <div className="cards">
+        <div className="trello-cards">
+          <div>My Trello board</div>
+        </div>
+        <div className="trello-cards">
+          <div>My Trello board</div>
+        </div>
+        <div className="trello-cards">
+          <div>My Trello board</div>
         </div>
       </div>
-      <div className="workspace-cards-container">
-        {filtredCards.map((card) => {
-          return (
-            <WorkspacesCard
-              updateCard={updateCard}
-              card={card}
-              deleteCard={deleteCard}
-            />
-          );
-        })}
-        <div
-          className="workspace-card-container"
-          onClick={() => {
-            setOpenModal(true);
-          }}
-        >
-          Create new board
+
+      <div className="board-workspace-container">
+        <h1 className="">YOUR WORKSPACES</h1>
+        <div className="board-workspace-info-container">
+          <span>Trello Workspaces</span>``
+          <div className="trello-workspaces-items">
+            <span
+              onClick={() => {
+                setShowActive(0);
+              }}
+            >
+              All
+            </span>
+            <span
+              onClick={() => {
+                setShowActive(1);
+              }}
+            >
+              Active
+            </span>
+            <span
+              onClick={() => {
+                setShowActive(-1);
+              }}
+            >
+              Inactive
+            </span>
+            <span
+              onClick={() => {
+                setShowActive(-2);
+              }}
+            >
+              Is Favorite
+            </span>
+          </div>
         </div>
+        <div className="workspace-cards-container">
+          {filtredCards.map((card) => {
+            return (
+              <WorkspacesCard
+                updateCard={updateCard}
+                card={card}
+                deleteCard={deleteCard}
+              />
+            );
+          })}
+          <div
+            className="workspace-card-container"
+            onClick={() => {
+              setOpenModal(true);
+            }}
+          >
+            Create new board
+          </div>
+        </div>
+        <AddCardModalBoards
+          open={openModal}
+          cards={cards}
+          setCards={setCards}
+          closefn={setOpenModal}
+        />
       </div>
-      <AddCardModalBoards
-        open={openModal}
-        cards={cards}
-        setCards={setCards}
-        closefn={setOpenModal}
-      />
-    </div>
+      
+    </main>
   );
 };
 

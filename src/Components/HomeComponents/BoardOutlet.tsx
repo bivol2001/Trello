@@ -1,12 +1,11 @@
 import React from "react";
-import NavBarLog from "./Page After log/NavBarLog";
-import star from "../images/star.png";
-import group from "../images/people (2).png";
+import star from "../../images/star.png";
+import group from "../../images/people (2).png";
+import "../../StyleCss/BoardPanelsworkspaces.css";
 
-const BoardsWorkspacesPanel = () => {
+const BoardOutlet = () => {
   return (
     <div>
-      <NavBarLog />
       <div className="board-container-workspaces">
         <div className="board-container-side-left">
           <div className="board-container-side-left-text">
@@ -61,4 +60,4 @@ const BoardsWorkspacesPanel = () => {
   );
 };
 
-export default BoardsWorkspacesPanel;
+export default BoardOutlet;
