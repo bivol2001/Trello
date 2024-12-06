@@ -6,7 +6,7 @@ import {
   useLocation,
   Navigate,
   useNavigate,
-} from "react-router";
+} from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import Page404 from "./Pages/Page404";
 import "./index.css";
@@ -18,6 +18,7 @@ import Boards from "./Pages/Boards";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BoardsWorkspaces from "./Components/BoardsWorkspaces";
 import BoardsWorkspacesPanel from "./Pages/BoardsPanelWorkspaces";
+import BoardOutlet from "./Components/HomeComponents/BoardOutlet";
 
 const App = () => {
   const navigate = useNavigate();
@@ -39,8 +40,10 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<HomePageLog />} />
-        <Route path="/boards" element={<Boards />} />
-        <Route path="/boards/panel" element={<BoardsWorkspacesPanel />} />
+        <Route path="/boards" element={<Boards />}>
+          <Route index element={<BoardsWorkspaces />} />
+          <Route path="panel" element={<BoardOutlet/>} />
+        </Route>
       </Routes>
     </div>
   );

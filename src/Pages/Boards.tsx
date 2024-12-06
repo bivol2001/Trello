@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import BoardsWorkspaces from "../Components/BoardsWorkspaces";
 import userImg from "../images/user.png";
 import BoardPopover from "../Components/BoardPopover";
+import { Outlet } from "react-router-dom";
 
 const Boards = () => {
   const { t, i18n } = useTranslation();
@@ -60,21 +61,8 @@ const Boards = () => {
             {boardPopover && <BoardPopover />}
           </div>
         </aside>
-        <main className="board-container">
-          <div className="recently-viewed">Recently viewed</div>
-          <div className="cards">
-            <div className="trello-cards">
-              <div>My Trello board</div>
-            </div>
-            <div className="trello-cards">
-              <div>My Trello board</div>
-            </div>
-            <div className="trello-cards">
-              <div>My Trello board</div>
-            </div>
-          </div>
-          <BoardsWorkspaces />
-        </main>
+       
+              <Outlet/>
       </div>
     </div>
   );

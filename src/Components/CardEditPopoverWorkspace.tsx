@@ -35,7 +35,7 @@ const CardEditPopoverWorkspace = ({deleteCard,id,updateCard,isLiked}:CardEditPop
               // setIsFavorite(!isFavorite);
               updateCard(id,"","", true)
             }}
-            src={isLiked ? FavoriteEmpty : FavoriteGold}
+            src={isLiked ? FavoriteGold : FavoriteEmpty}
             alt=""
             className="workspace-card-btn-customize"
           />
