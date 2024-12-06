@@ -41,7 +41,7 @@ const AddCardModalBoards = ({ open, closefn, setCards, cards }) => {
           </span>
         </div>
         <div>
-          ``
+          
           <img src={img} alt="" className="modal-board-img" />
         </div>
         <div>
