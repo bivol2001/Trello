@@ -40,10 +40,12 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<HomePageLog />} />
+        
         <Route path="/boards" element={<Boards />}>
           <Route index element={<BoardsWorkspaces />} />
           <Route path="panel" element={<BoardOutlet/>} />
         </Route>
+        
       </Routes>
     </div>
   );

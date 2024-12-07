@@ -2,6 +2,7 @@ import React from "react";
 import star from "../../images/star.png";
 import group from "../../images/people (2).png";
 import "../../StyleCss/BoardPanelsworkspaces.css";
+import PanelCardsBoards from "./PanelCardsBoards";
 
 const BoardOutlet = () => {
   return (
@@ -54,6 +55,7 @@ const BoardOutlet = () => {
             </div>
             <div className="board-container-navbar-group2"></div>
           </div>
+            <PanelCardsBoards/>
         </div>
       </div>
     </div>
