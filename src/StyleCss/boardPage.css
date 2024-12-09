@@ -344,17 +344,59 @@
 
 .panel-card {
   display: flex;
+  flex-direction: column;
   flex: 1;
   background-color: #987195;
-  height: 400px;
+  height: 300px;
   border: 1px solid black;
   border-radius: 14px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px;
+  
 }
+
 
 .panel-card-text {
   width: 100%;
   font-size: 30px;
   color: silver;
   text-align: center;
-  margin: 10px;
+  margin-bottom: 10px;
 }
+.panel-card-description {
+  width: 100%;
+  font-size: 20px;
+  color: silver;
+  text-align: center;
+}
+
+.panel-card-button{
+  display: flex;
+  justify-content: center;
+  color:black;
+  border-radius: 25px;
+  text-align: center;
+  background-color: silver;
+  width: 100px;
+  height: 40px;
+  padding: 6px 0;
+  cursor:pointer;
+}
+
+.panel-card-input{
+  margin: 10px;
+  height: 50px;
+  background-color:#8f3f644d;
+  border: unset;
+  color:silver
+}
+
+.panel-card-popover{
+  color:silver;
+width: 270px;
+height: 200px;
+background-color:#1d2125;
+}
+
+

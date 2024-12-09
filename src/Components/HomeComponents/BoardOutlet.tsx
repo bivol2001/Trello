@@ -23,7 +23,9 @@ const BoardOutlet = () => {
               <p>Workspaces settings</p>
             </span>
           </div>
-          <hr />
+          <span className="hr">
+            <hr />
+          </span>
           <div className="board-container-side-left-text">
             <span>
               <h3>Workspaces views</h3>
@@ -55,7 +57,7 @@ const BoardOutlet = () => {
             </div>
             <div className="board-container-navbar-group2"></div>
           </div>
-            <PanelCardsBoards/>
+          <PanelCardsBoards />
         </div>
       </div>
     </div>

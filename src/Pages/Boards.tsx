@@ -61,8 +61,7 @@ const Boards = () => {
             {boardPopover && <BoardPopover />}
           </div>
         </aside>
-       
-              <Outlet/>
+        <Outlet />
       </div>
     </div>
   );

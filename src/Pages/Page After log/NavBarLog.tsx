@@ -38,6 +38,9 @@ const NavBarLog = () => {
         onMouseLeave={() => {
           setIsFavorite(!isFavorite);
         }}
+        onClick={() => {
+          navigate("/boards");
+        }}
       >
         <img
           className="logo"
@@ -119,7 +122,6 @@ const NavBarLog = () => {
       {customPopover === "notification" && <NotificationPopover />}
     </div>
   );
-  ``;
 };
 
 export default NavBarLog;

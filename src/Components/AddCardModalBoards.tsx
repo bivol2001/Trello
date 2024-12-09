@@ -15,6 +15,7 @@ const AddCardModalBoards = ({ open, closefn, setCards, cards }) => {
       title: title,
       description: description,
       isActive: false,
+      isLiked:true,
     };
     setCards([newCard, ...cards]);
     setDescription("");
