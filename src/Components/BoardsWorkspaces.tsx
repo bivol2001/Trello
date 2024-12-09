@@ -9,6 +9,7 @@ export interface CardInterface {
   title: string;
   description: string;
   isActive: boolean;
+  isLiked: boolean;
 }
 
 const workspacesUser: CardInterface[] = [
@@ -18,6 +19,7 @@ const workspacesUser: CardInterface[] = [
     title: "New card1",
     description: "`zc`zc`zc``",
     isActive: false,
+    isLiked:true,
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const workspacesUser: CardInterface[] = [
     title: "New card2",
     description: "lorem aretgre",
     isActive: true,
+    isLiked:false,
   },
 ];
 
@@ -62,23 +65,50 @@ const BoardsWorkspaces = () => {
   const updateCard = (
     id: number,
     titleUpdate: string,
-    descriptionUpdate: string
+    descriptionUpdate: string,
+    updateLike?: boolean,
+    
+
   ) => {
     const editedCard = cards.find((card) => card.id === id);
-    const newCard = {
-      ...editedCard,
-      title: titleUpdate ? titleUpdate : editedCard.title,
-      description: descriptionUpdate
-        ? descriptionUpdate
-        : editedCard.description,
+    if (updateLike) {
+            const newCard = {
+              ...editedCard,
+            isLiked:!editedCard.isLiked 
+            };
+
+            const newCards = cards.map((card) => {
+              if (card.id === newCard.id) {
+                return newCard;
+              } else {
+                return card;
+              }
+            });
+      setCards(newCards);
+      console.log(newCards);
       
-    };
+      
+    } else {
+      
+  
+      const newCard = {
+        ...editedCard,
+        title: titleUpdate ? titleUpdate : editedCard.title,
+        description: descriptionUpdate ? descriptionUpdate
+          : editedCard.description,
+      
+      };
+    
+      const newCards = cards.map((card) => {
+        if (card.id === newCard.id) {
+          return newCard
+        } else {
+          return card
+        }
+      })
+      setCards(newCards)
 
-    const index = cards.indexOf(editedCard)
-    const updatedNew= cards.splice(index, 1, newCard);
-    setCards(updatedNew)
-
-
+    }
 
 
   };

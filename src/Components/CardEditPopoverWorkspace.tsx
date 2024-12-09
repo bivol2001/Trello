@@ -7,15 +7,15 @@ import trush from "../images/trush.png";
 
 interface CardEditPopoverWorkspaceProps{
   id: number;
-  updateCard: (id: number, title:string, description:string) => void;
-  deleteCard:(id:number)=> void;
+  updateCard: (id: number, title:string, description:string,updateLike:boolean ) => void;
+  deleteCard: (id: number) => void;
+  isLiked:boolean
 }
 
 
 
-const CardEditPopoverWorkspace = ({deleteCard,id,updateCard}:CardEditPopoverWorkspaceProps) => {
-  const [isFavorite, setIsFavorite] = useState<boolean>(true);
-  const [openModal, setOpenModal] = useState<boolean>(false)
+const CardEditPopoverWorkspace = ({deleteCard,id,updateCard,isLiked}:CardEditPopoverWorkspaceProps) => {
+    const [openModal, setOpenModal] = useState<boolean>(false)
 
 
 
@@ -32,9 +32,10 @@ const CardEditPopoverWorkspace = ({deleteCard,id,updateCard}:CardEditPopoverWork
         <span>
           <img
             onClick={() => {
-              setIsFavorite(!isFavorite);
+
+              updateCard(id,'','',true)
             }}
-            src={isFavorite ? FavoriteEmpty : FavoriteGold}
+            src={isLiked ? FavoriteEmpty : FavoriteGold}
             alt=""
             className="workspace-card-btn-customize"
           />
