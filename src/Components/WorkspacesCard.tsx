@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CardEditPopoverWorkspace from "./CardEditPopoverWorkspace";
 import { CardInterface } from "./BoardsWorkspaces";
+import { useNavigate } from "react-router";
 
 interface WorkspacesCardProps {
   card: CardInterface;
@@ -10,6 +11,7 @@ interface WorkspacesCardProps {
 
 const WorkspacesCard = ({ card, deleteCard ,updateCard}: WorkspacesCardProps) => {
   const [isHover, setIsHoveer] = useState(false);
+  const navigate = useNavigate()
 
   return (
     <div
@@ -20,8 +22,11 @@ const WorkspacesCard = ({ card, deleteCard ,updateCard}: WorkspacesCardProps) =>
       onMouseLeave={() => {
         setIsHoveer(false);
       }}
+      onClick={() => {
+        navigate("panel")
+      }}
     >
-      {isHover && <CardEditPopoverWorkspace isLiked={card.isLiked} updateCard={updateCard} deleteCard={deleteCard} id={card.id} />}
+      {isHover && <CardEditPopoverWorkspace updateCard={updateCard} deleteCard={deleteCard} id={card.id} isLiked={card.isLiked} />}
       <img src={card.img} alt="" className="card-icon" />
       <span className="card-title">{card.title}</span>
       <span className="card-description">{card.description}</span>

@@ -47,7 +47,10 @@ const EditCardModalBoards = ({ open, closefn,id,updateCard }) => {
           />
         </div>
         <div>
-          <button onClick={()=>{updateCard(id, titleUpdate, descriptionUpdate);}}
+          <button onClick={() => {
+            closefn(false)
+            updateCard(id, titleUpdate, descriptionUpdate, false);
+          }}
             className="modal-button-start"
             disabled={!titleUpdate.trim() || !descriptionUpdate.trim()}
           >
